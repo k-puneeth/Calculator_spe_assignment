@@ -3,13 +3,9 @@ pipeline {
     agent none
    stages {
     stage('Maven Install') {
-      agent {
-       docker {
-         image 'maven:3.5.0'
-     }
-  }
   steps {
-       sh 'mvn clean install'
+       sh 'mvn clean package'
+       sh 'java -cp /target/ui-0.0.1-SNAPSHOT.jar calculator'
        }
      }
    }
