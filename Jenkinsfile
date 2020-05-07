@@ -12,5 +12,16 @@ pipeline {
       sh 'docker build -t puneethk26/di:calimg .'
      }
      }
+     stage('PUBLISH to DockerHub')
+ 		{
+ 		    steps
+ 		    {
+ 	        	withDockerRegistry([ credentialsId: "DockerHub", url: "" ])
+ 	        	{
+ 	        		sh 'docker push puneethk26/di:calimg'
+
+ 	      		}
+ 		    }
+ 		}
    }
  }
