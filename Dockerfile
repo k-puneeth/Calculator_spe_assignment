@@ -1,3 +1,3 @@
 FROM adoptopenjdk/openjdk8:ubi
-COPY /target/spring-petclinic-1.5.1.jar /home/spring-petclinic-1.5.1.jar
-CMD ["java","-jar","/home/spring-petclinic-1.5.1.jar"]
+COPY /target/my-app-1.0-SNAPSHOT.jar /home/my-app-1.0-SNAPSHOT.jar
+CMD ["java","-cp","/home/my-app-1.0-SNAPSHOT.jar","Calculator"]
