@@ -1,8 +1,8 @@
 #!groovy
 pipeline {
-    agent none
+    agent any
    stages {
-    stage('Maven Install') {
+    stage('Maven Install and Build Jar') {
   steps {
        sh 'mvn clean package'
        sh 'java -cp /target/ui-0.0.1-SNAPSHOT.jar calculator'
