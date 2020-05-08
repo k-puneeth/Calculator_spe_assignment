@@ -29,6 +29,8 @@ pipeline {
         script {
           step([$class: "RundeckNotifier",
           rundeckInstance: "Rundeck",
+          shouldFailTheBuild: true,
+          shouldWaitForRundeckJob: true,
           options: """
             BUILD_VERSION=$BUILD_NUMBER
           """,
